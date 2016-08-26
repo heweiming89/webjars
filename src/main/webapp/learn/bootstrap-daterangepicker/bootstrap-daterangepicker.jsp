@@ -23,6 +23,9 @@
     <link href="${ctx_path}/webjars/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
     <!-- Bootstrap -->
     <link href="${ctx_path}/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="${ctx_path}/webjars/bootstrap-daterangepicker/2.1.19/css/bootstrap-daterangepicker.css" rel="stylesheet" >
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -41,6 +44,9 @@
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="${ctx_path}/webjars/jquery/1.12.4/jquery.min.js"></script>
 <script src="${ctx_path}/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+<script src="${ctx_path}/webjars/momentjs/2.14.1/min/moment.min.js"></script>
+<script src="${ctx_path}/webjars/momentjs/2.14.1/locale/zh-cn.js"></script>
+<script src="${ctx_path}/webjars/bootstrap-daterangepicker/2.1.19/js/bootstrap-daterangepicker.js"></script>
 <script>
     console.info("${ctx_path}");
 </script>

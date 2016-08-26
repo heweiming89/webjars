@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="${ctx_path}/webjars/normalize.css/3.0.2/normalize.css">
     <%--<link rel="stylesheet" href="css/main.css">--%>
     <script src="${ctx_path}/webjars/modernizr/2.8.3/modernizr.min.js"></script>
+    <link rel="stylesheet" href="${ctx_path}/webjars/iCheck/1.0.2/skins/minimal/minimal.css">
 </head>
 <body>
 <!--[if lt IE 8]>
@@ -30,13 +31,22 @@
 <![endif]-->
 
 <!-- Add your site or application content here -->
-
+<input type="checkbox"/>111
+<input type="checkbox" checked/>222
+<input type="radio" name="iCheck"/>333
+<input type="radio" name="iCheck" checked/>444
 
 
 <script src="${ctx_path}/webjars/jquery/1.12.4/jquery.min.js"></script>
+<script src="${ctx_path}/webjars/iCheck/1.0.2/icheck.min.js"></script>
 
 <script>
-
+    $(document).ready(function () {
+        $('input').iCheck({
+            checkboxClass: 'icheckbox_minimal',
+            radioClass: 'iradio_minimal'
+        });
+    });
 </script>
 </body>
 </html>
