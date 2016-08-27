@@ -1,4 +1,4 @@
-package cn.heweiming.webjars.cncrypt.servlet;
+package cn.heweiming.webjars.servlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -76,5 +76,13 @@
     <orderEntry type="library" name="Maven: org.webjars.bower:requirejs:2.1.22" level="project" />
     <orderEntry type="library" name="Maven: org.webjars:jquery.sparkline:2.1.2" level="project" />
     <orderEntry type="library" name="Maven: org.webjars:requirejs:2.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.bower:datatables-buttons:1.2.2" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.bower:datatables:1.10.12" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.bower:datatables-tabletools:2.2.4" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.bower:datatables-responsive:2.1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars:bootstrap-datepicker:1.6.1" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.6.7" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.6.7" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.6.7" level="project" />
   </component>
 </module>
