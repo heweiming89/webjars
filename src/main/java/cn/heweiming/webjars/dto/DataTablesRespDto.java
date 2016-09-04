@@ -1,34 +1,45 @@
 package cn.heweiming.webjars.dto;
 
-public class DatatablesRequestDto {
+public class DataTablesRespDto {
 
-    private Integer draw;
-    private Integer length;
-    private Integer start;
-
-    public Integer getDraw() {
+    private int draw;
+    private int recordsTotal;
+    private int recordsFiltered;
+    private Object data;
+    private String error;
+    
+    public Object getData() {
+        return data;
+    }
+    public int getDraw() {
         return draw;
     }
-
-    public Integer getLength() {
-        return length;
+    
+    public String getError() {
+        return error;
     }
-
-    public Integer getStart() {
-        return start;
+    public int getRecordsFiltered() {
+        return recordsFiltered;
     }
-
-    public void setDraw(Integer draw) {
+    public int getRecordsTotal() {
+        return recordsTotal;
+    }
+    public void setData(Object data) {
+        this.data = data;
+    }
+    public void setDraw(int draw) {
         this.draw = draw;
     }
-
-    public void setLength(Integer length) {
-        this.length = length;
+    public void setError(String error) {
+        this.error = error;
     }
-
-    public void setStart(Integer start) {
-        this.start = start;
+    public void setRecordsFiltered(int recordsFiltered) {
+        this.recordsFiltered = recordsFiltered;
     }
-
+    public void setRecordsTotal(int recordsTotal) {
+        this.recordsTotal = recordsTotal;
+    }
+    
+    
 
 }

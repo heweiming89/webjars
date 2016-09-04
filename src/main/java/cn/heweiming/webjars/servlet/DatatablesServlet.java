@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,7 +17,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 /**
  * Servlet implementation class DatatablesServlet
  */
-@WebServlet("/datatables")
+//@WebServlet("/datatables")
 public class DatatablesServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;

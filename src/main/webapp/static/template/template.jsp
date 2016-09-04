@@ -34,7 +34,7 @@
 
 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script>window.jQuery || document.write('<script src="${ctx_path}/webjars/jquery/1.12.4/jquery.min.js"><\/script>')</script>
+<script>window.jQuery || document.write('<script src="${ctx_path}/webjars/jquery/2.2.4/jquery.min.js"><\/script>')</script>
 <%--<script src="js/plugins.js"></script>--%>
 <%--<script src="js/main.js"></script>--%>
 

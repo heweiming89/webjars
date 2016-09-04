@@ -24,7 +24,7 @@
     <!-- Bootstrap -->
     <link href="${ctx_path}/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="${ctx_path}/webjars/bootstrap-daterangepicker/2.1.19/css/bootstrap-daterangepicker.css" rel="stylesheet" >
+    <link href="${ctx_path}/static/plug-ins/bootstrap-daterangepicker-1.3.23/daterangepicker-bs3.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -41,12 +41,13 @@
 
 <!-- Add your site or application content here -->
 
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="${ctx_path}/webjars/jquery/2.2.4/jquery.min.js"></script>
 <script src="${ctx_path}/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
-<script src="${ctx_path}/webjars/momentjs/2.14.1/min/moment.min.js"></script>
-<script src="${ctx_path}/webjars/momentjs/2.14.1/locale/zh-cn.js"></script>
-<script src="${ctx_path}/webjars/bootstrap-daterangepicker/2.1.19/js/bootstrap-daterangepicker.js"></script>
+<script src="${ctx_path}/static/plug-ins/moment-2.8.4/min/moment.min.js"></script>
+<script src="${ctx_path}/static/plug-ins/moment-2.8.4/locale/zh-cn.js"></script>
+<script src="${ctx_path}/static/plug-ins/bootstrap-daterangepicker-1.3.23/daterangepicker.js"></script>
 <script>
     console.info("${ctx_path}");
 </script>

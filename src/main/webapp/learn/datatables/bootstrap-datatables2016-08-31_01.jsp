@@ -39,27 +39,30 @@
 <![endif]-->
 
 <!-- Add your site or application content here -->
+<button id="testBtn1" type="button" class="btn btn-primary">测试按钮1</button>
+
+
 <div class="container">
     <div class="table-responsive">
         <table id="table_id_example" class="table table-striped table-bordered table-hover table-condensed">
             <thead>
-            <tr>
-                <th>Column 1</th>
-                <th>Column 2</th>
-                <th>Column 3</th>
-                <th>Column 4</th>
-                <th>Column 5</th>
-                <th>Column 6</th>
-                <th>Column 7</th>
-            </tr>
+            <%--<tr>--%>
+            <%--<th>Column 1</th>--%>
+            <%--<th>Column 2</th>--%>
+            <%--<th>Column 3</th>--%>
+            <%--<th>Column 4</th>--%>
+            <%--<th>Column 5</th>--%>
+            <%--<th>Column 6</th>--%>
+            <%--<th>Column 7</th>--%>
+            <%--</tr>--%>
             </thead>
             <tbody>
             <%--<c:forEach begin="1" end="102" varStatus="trs">--%>
-                <%--<tr>--%>
-                    <%--<c:forEach begin="1" end="7" varStatus="tds">--%>
-                        <%--<td>row ${trs.index} data ${tds.index}</td>--%>
-                    <%--</c:forEach>--%>
-                <%--</tr>--%>
+            <%--<tr>--%>
+            <%--<c:forEach begin="1" end="7" varStatus="tds">--%>
+            <%--<td>row ${trs.index} data ${tds.index}</td>--%>
+            <%--</c:forEach>--%>
+            <%--</tr>--%>
             <%--</c:forEach>--%>
             </tbody>
         </table>
@@ -74,45 +77,73 @@
 
 <script>
     $(function () {
+
+        $.fn.dataTable.ext.errMode = 'none';
+
+        var dataTable = null;
+        $(document).on("click", "#testBtn1", function () {
+            console.info(dataTable.settings());
+            console.info("\n");
+            console.info(dataTable.ajax.json());
+        });
+
         console.info("1111");
-        $('#table_id_example').dataTable({
-            language: {
-                url: "${ctx_path}/static/json/i18n/datatables_zh-cn.json"
-            },
+        dataTable = $('#table_id_example')
+                .on('error.dt', function (e, settings, techNote, message) {
+                    console.log("错误提示" + message);
+                })
+                .DataTable({
+                    language: {
+                        url: "${ctx_path}/static/json/i18n/datatables_zh-cn.json"
+                    },
 
-            // 特性(Features)
+                    // 特性(Features)
 
-            // autoWidth:false
-            // deferRender:true
-            // 当应用了搜索时，会在适当位置显示表格的搜索条件。 这个配置允许打开或者关闭这个特性。
-            // info:false
-            // 是否允许最终用户改变表格每页显示的记录数
-            // lengthChange: false
-            // 是否允许Datatables开启排序
-            // ordering: false
-            // 是否开启本地分页
+                    // autoWidth:false
+                    // deferRender:true
+                    // 当应用了搜索时，会在适当位置显示表格的搜索条件。 这个配置允许打开或者关闭这个特性。
+                    // info:false
+                    // 是否允许最终用户改变表格每页显示的记录数
+                    // lengthChange: false
+                    // 是否允许Datatables开启排序
+                    ordering: false,
+                    // 是否开启本地分页
 //            paging: false,
-            // 是否显示处理状态(排序的时候，数据很多耗费时间长的话，也会显示这个)
+                    // 是否显示处理状态(排序的时候，数据很多耗费时间长的话，也会显示这个)
 //            processing: true
-            // 设置水平滚动
+                    // 设置水平滚动
 //            scrollX: true
-            // 设置垂直滚动
+                    // 设置垂直滚动
 //            scrollY:true
-            // 是否允许Datatables开启本地搜索
+                    // 是否允许Datatables开启本地搜索
 //            searching:false
-            // 是否开启服务器模式
-            serverSide: true,
-            ajax: {
-                url: "${ctx_path}/datatables/ajax/array",
-                type: "POST"
-            }
-            // 保存状态 - 在页面重新加载的时候恢复状态（页码等内容）
+                    // 是否开启服务器模式
+                    serverSide: true,
+                    ajax: {
+                        url: "${ctx_path}/datatables/ajax/object",
+                        type: "POST"
+                    },
+
+//                     data: [{
+//                         name: 'test'
+//                     }
+//                     ],
+                    columns: [
+                        {"title": "姓名", data: 'name'},
+                        {"title": "年龄", data: 'age'},
+                        {"title": "性别", data: 'gender'},
+                        {"title": "身高", data: 'height'},
+                        {"title": "体重", data: 'weight'},
+                        {"title": "生日", data: 'birthday'},
+                        {"title": "手机", data: 'mobilePhone'}
+                    ]
+                    // 保存状态 - 在页面重新加载的时候恢复状态（页码等内容）
 //            stateSave: true
-            // 定义翻页组件的样式(有4个选择)
-            // simple -  只有上一页和下一页2个按钮
-            // simple_numbers   – 上一页,下一页和页码
-            // full – 首页,末页,上一页,下一页4个按钮
-            // full_numbers   – 全部按钮和页面
+                    // 定义翻页组件的样式(有4个选择)
+                    // simple -  只有上一页和下一页2个按钮
+                    // simple_numbers   – 上一页,下一页和页码
+                    // full – 首页,末页,上一页,下一页4个按钮
+                    // full_numbers   – 全部按钮和页面
 //            pagingType: "simple"
 
 //            renderer: {
@@ -121,41 +152,41 @@
 //            }
 
 
-            // 数据(Data)
+                    // 数据(Data)
 
-            // 增加或修改通过Ajax提交到服务端的请求数据
-            // 数据属性或操作表数据的方法
-            // 从一个ajax数据源读取数据给表格内容
-            // 用来显示表格的数据
-
-
-            // 回调函数(Callbacks)
-
-            // tfoot的回调函数
-            // 行被创建时回调函数
-            // 表格每次重绘回调函数
-            // 数字格式化时的回调函数
-            // 表格Header显示时的回调函数
-            // 表格状态信息改变的回调函数
-            // 初始化结束后的回调函数
-            // 表格绘制前的回调函数
-            // 表格行(Row)绘制的回调函数
-            // 该回调函数定义了从哪里和如何读取保存的状态
-            // 状态加载完成之后的回调函数
-            // 状态加载完成之后，对数据处理的回调函数
-            // 该回调函数定义了状态该存储在什么地方及如何存储
-            // 对状态进行存储时，对数据处理的回调函数
-
-            // 配置(Options)
-            //
-            //
-            //
-            //
-            //
-            //
+                    // 增加或修改通过Ajax提交到服务端的请求数据
+                    // 数据属性或操作表数据的方法
+                    // 从一个ajax数据源读取数据给表格内容
+                    // 用来显示表格的数据
 
 
-        });
+                    // 回调函数(Callbacks)
+
+                    // tfoot的回调函数
+                    // 行被创建时回调函数
+                    // 表格每次重绘回调函数
+                    // 数字格式化时的回调函数
+                    // 表格Header显示时的回调函数
+                    // 表格状态信息改变的回调函数
+                    // 初始化结束后的回调函数
+                    // 表格绘制前的回调函数
+                    // 表格行(Row)绘制的回调函数
+                    // 该回调函数定义了从哪里和如何读取保存的状态
+                    // 状态加载完成之后的回调函数
+                    // 状态加载完成之后，对数据处理的回调函数
+                    // 该回调函数定义了状态该存储在什么地方及如何存储
+                    // 对状态进行存储时，对数据处理的回调函数
+
+                    // 配置(Options)
+                    //
+                    //
+                    //
+                    //
+                    //
+                    //
+
+
+                });
     });
 </script>
 </body>

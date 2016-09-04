@@ -19,7 +19,7 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
     <meta name="description" content="">
-    <script src="${ctx_path}/webjars/jquery/1.12.4/jquery.min.js"></script>
+    <script src="${ctx_path}/webjars/jquery/2.2.4/jquery.min.js"></script>
     <script src="${ctx_path}/webjars/jquery-validation/1.15.1/dist/jquery.validate.min.js"></script>
     <script src="${ctx_path}/webjars/jquery-validation/1.15.1/src/localization/messages_zh.js"></script>
 </head>

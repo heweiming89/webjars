@@ -169,8 +169,7 @@ fa-ban on fa-camera
 
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script>window.jQuery || document.write('<script src="${ctx_path}/webjars/jquery/1.12.4/jquery.min.js"><\/script>')</script>
+<script src="${ctx_path}/webjars/jquery/2.2.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="${ctx_path}/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
 <script src="${ctx_path}/webjars/bootstrap-star-rating/4.0.1/js/star-rating.min.js"></script>

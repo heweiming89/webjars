@@ -32,40 +32,41 @@
     <%--<link rel="stylesheet" href="${ctx_path}/webjars/datatables/1.10.12/css/jquery.dataTables.min.css">--%>
     <link rel="stylesheet" href="${ctx_path}/webjars/datatables/1.10.12/css/dataTables.bootstrap.min.css">
 </head>
-<body style="margin: 20px">
+<body>
 <!--[if lt IE 8]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://www.baidu.com">upgrade
     your browser</a> to improve your experience.</p>
 <![endif]-->
 
 <!-- Add your site or application content here -->
-<div class="table-responsive">
-    <table id="table_id_example" class="table table-striped table-bordered table-hover table-condensed">
-        <thead>
-        <tr>
-            <th>Column 1</th>
-            <th>Column 2</th>
-            <th>Column 3</th>
-            <th>Column 4</th>
-            <th>Column 5</th>
-            <th>Column 6</th>
-            <th>Column 7</th>
-        </tr>
-        </thead>
-        <tbody>
-        <c:forEach begin="1" end="102" varStatus="trs">
+<div class="container">
+    <div class="table-responsive">
+        <table id="table_id_example" class="table table-striped table-bordered table-hover table-condensed">
+            <thead>
             <tr>
-                <c:forEach begin="1" end="7" varStatus="tds">
-                    <td>row ${trs.index} data ${tds.index}</td>
-                </c:forEach>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>Column 3</th>
+                <th>Column 4</th>
+                <th>Column 5</th>
+                <th>Column 6</th>
+                <th>Column 7</th>
             </tr>
-        </c:forEach>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            <%--<c:forEach begin="1" end="102" varStatus="trs">--%>
+                <%--<tr>--%>
+                    <%--<c:forEach begin="1" end="7" varStatus="tds">--%>
+                        <%--<td>row ${trs.index} data ${tds.index}</td>--%>
+                    <%--</c:forEach>--%>
+                <%--</tr>--%>
+            <%--</c:forEach>--%>
+            </tbody>
+        </table>
+    </div>
 </div>
 
-
-<script src="${ctx_path}/webjars/jquery/1.12.4/jquery.min.js"></script>
+<script src="${ctx_path}/webjars/jquery/2.2.4/jquery.min.js"></script>
 <script src="${ctx_path}/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
 <script src="${ctx_path}/webjars/datatables/1.10.12/js/jquery.dataTables.min.js"></script>
 <script src="${ctx_path}/webjars/datatables/1.10.12/js/dataTables.bootstrap.min.js"></script>
@@ -75,30 +76,8 @@
     $(function () {
         console.info("1111");
         $('#table_id_example').dataTable({
-
             language: {
-                "sProcessing": "处理中...",
-                "sLengthMenu": "显示 _MENU_ 项结果",
-                "sZeroRecords": "没有匹配结果",
-                "sInfo": "显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项",
-                "sInfoEmpty": "显示第 0 至 0 项结果，共 0 项",
-                "sInfoFiltered": "(由 _MAX_ 项结果过滤)",
-                "sInfoPostFix": "",
-                "sSearch": "搜索:",
-                "sUrl": "",
-                "sEmptyTable": "表中数据为空",
-                "sLoadingRecords": "载入中...",
-                "sInfoThousands": ",",
-                "oPaginate": {
-                    "sFirst": "首页",
-                    "sPrevious": "上页",
-                    "sNext": "下页",
-                    "sLast": "末页"
-                },
-                "oAria": {
-                    "sSortAscending": ": 以升序排列此列",
-                    "sSortDescending": ": 以降序排列此列"
-                }
+                url: "${ctx_path}/static/json/i18n/datatables_zh-cn.json"
             },
 
             // 特性(Features)
@@ -122,9 +101,9 @@
             // 是否允许Datatables开启本地搜索
 //            searching:false
             // 是否开启服务器模式
-//            serverSide: true,
+            serverSide: true,
             ajax: {
-                url: "${ctx_path}/datatables",
+                url: "${ctx_path}/datatables/ajax/array",
                 type: "POST"
             }
             // 保存状态 - 在页面重新加载的时候恢复状态（页码等内容）

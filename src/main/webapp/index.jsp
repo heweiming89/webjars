@@ -17,7 +17,7 @@
     <button type="submit">提交</button>
 </form>
 </body>
-<script type="text/javascript" src="${ctx_path}/webjars/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="${ctx_path}/webjars/jquery/2.2.4/jquery.min.js"></script>
 <script type="text/javascript" src="${ctx_path}/webjars/jsencrypt/2.3.0/bin/jsencrypt.min.js"></script>
 <script type="text/javascript">
     var publicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCtdFAsGlWX9b3tgQ0nC3Z0047cU3j7jFhMkSE2YP2h59BRcrqcZ9EyP3K3ecAcI7yNRu6SSjxwt9KbBmVrQ+6Dl5ew/t/MhrEsbrmGh5hAuJBAyb1u+/Lk/uG2pFP8LwBzrojR9TA4CK6e8kUPLwdVCTaTZ0rhQ++1MsEkJbG6twIDAQAB";

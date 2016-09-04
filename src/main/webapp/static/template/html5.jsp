@@ -39,7 +39,7 @@
 
 
 
-	<script src="${ctx_path}/webjars/jquery/1.12.4/jquery.min.js"></script>
+	<script src="${ctx_path}/webjars/jquery/2.2.4/jquery.min.js"></script>
 
 	<script>
 		

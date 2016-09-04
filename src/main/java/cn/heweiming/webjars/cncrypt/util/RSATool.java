@@ -18,7 +18,7 @@ public class RSATool {
 
     private static final String RSA_TOOL_PROPERTIES = "RSATool.properties";
     private static final String RSA = "RSA";
-    private static final int KEY_SIZE = 1024;
+    private static final int KEY_SIZE = 256;
 
     private static String PRIVATE_BASE_64;
     private static String PUBLIC_BASE_64;

@@ -23,7 +23,8 @@
     <link href="${ctx_path}/webjars/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
     <!-- Bootstrap -->
     <link href="${ctx_path}/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet">
-
+    <!-- Font Awesome -->
+    <link href="${ctx_path}/webjars/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
     <link href="${ctx_path}/webjars/bootstrap-daterangepicker/2.1.19/css/bootstrap-daterangepicker.css"
           rel="stylesheet">
 
@@ -40,22 +41,35 @@
     your browser</a> to improve your experience.</p>
 <![endif]-->
 
+<%--<div class="input-group input-medium date date-picker" data-date-format="yyyy-mm-dd"--%>
+<%--data-date-viewmode="years">--%>
+<%--<input type="text" class="form-control" readonly id="startDate">--%>
+<%--<span class="input-group-btn">--%>
+<%--<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>--%>
+<%--</span>--%>
+<%--</div>--%>
+
+
 <!-- Add your site or application content here -->
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div id="reportrange" class="pull-right"
-                 style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
-                <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
-                <span>July 28, 2016 - August 26, 2016</span> <b class="caret"></b>
+<%--<div class="container">--%>
+<div class="row" style="margin-top: 20px;margin-left: 20px;">
+    <div class="col-md-4" style="padding: 0px;">
+        <div class="form-group">
+            <div class="input-group" style="width: 240px;">
+                <label style="padding-top: 5px;margin-right: 2px;">时间范围：</label>
+                <div id="reportrange" class="form-control">
+                    <i class="fa fa-calendar"></i>&nbsp;
+                    <span></span>
+                </div>
             </div>
         </div>
     </div>
 </div>
+<%--</div>--%>
 
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="${ctx_path}/webjars/jquery/1.12.4/jquery.min.js"></script>
+<script src="${ctx_path}/webjars/jquery/2.2.4/jquery.min.js"></script>
 <script src="${ctx_path}/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
 <script src="${ctx_path}/webjars/momentjs/2.14.1/min/moment.min.js"></script>
 <script src="${ctx_path}/webjars/momentjs/2.14.1/locale/zh-cn.js"></script>
@@ -63,21 +77,23 @@
 <script>
     $(function () {
 
+        var dateFormatting = "YYYY-MM-DD";
         var start = moment().subtract(29, 'days');
         var end = moment();
 
         function cb(start, end) {
-            $('#reportrange span').html(start.format('YYYY年MM月DD日') + ' - ' + end.format('YYYY年MM月DD日'));
+            $('#reportrange span').html(start.format(dateFormatting) + ' ~ ' + end.format(dateFormatting));
         }
 
         $('#reportrange').daterangepicker({
+            opens: 'right',
             startDate: start,
             endDate: end,
             dateLimit: {
                 days: 90
             },
             locale: {
-                format: "YYYY年MM月DD日",
+                format: dateFormatting,
                 applyLabel: '确认',
                 cancelLabel: '取消',
                 customRangeLabel: '自定义范围'
@@ -87,12 +103,12 @@
                 '昨天': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
                 '最近7天': [moment().subtract(6, 'days'), moment()],
                 '最近30天': [moment().subtract(29, 'days'), moment()],
-                '这个月': [moment().startOf('month'), moment().endOf('month')],
+                '本月': [moment().startOf('month'), moment().endOf('month')],
                 '上个月': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
             }
         }, cb);
 
-        cb(start, end);
+//        cb(start, end);
 
     });
 </script>

@@ -39,7 +39,7 @@
 <!-- Add your site or application content here -->
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="${ctx_path}/webjars/jquery/1.12.4/jquery.min.js"></script>
+<script src="${ctx_path}/webjars/jquery/2.2.4/jquery.min.js"></script>
 <script src="${ctx_path}/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
 <script>
     console.info("${ctx_path}");

@@ -51,6 +51,8 @@
 				</property>
 			</bean>
 		</mvc:message-converters>
+		
+	<!-- 起用注解驱动的 Spring MVC -->	
 	</mvc:annotation-driven>
 
 	<!-- 文件上传配置 -->

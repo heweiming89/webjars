@@ -13,7 +13,7 @@
 		<!-- 编译时的编码 -->
 		<maven.compiler.encoding>UTF-8</maven.compiler.encoding>
 		<java.version>1.7</java.version>
-		<spring-framework.version>4.3.2.RELEASE</spring-framework.version>
+		<spring-framework.version>4.2.7.RELEASE</spring-framework.version>
 		<spring-boot.version>1.3.7.RELEASE</spring-boot.version>
 		<spring-data.version>Hopper-SR2</spring-data.version>
 		<struts2.version>2.3.30</struts2.version>
@@ -89,6 +89,50 @@
 
 	<dependencies>
 
+		<!-- SLF4J -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+		</dependency>
+
+		<!-- Oracle JDBC -->
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>11.2.0</version>
+		</dependency>
+
+		<!-- MySQL JDBC -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+
+		<!-- Embedded SQL Databases -->
+		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-dbcp2</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
@@ -117,6 +161,88 @@
 		</dependency>
 
 		<!-- WebJars -->
+
+		<!-- BEGIN CORE PLUGINS -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery</artifactId>
+			<version>2.2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>3.3.7-1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jQuery-slimScroll</artifactId>
+			<version>1.3.8</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery-blockui</artifactId>
+			<version>2.65</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars.bower</groupId>
+			<artifactId>js-cookie</artifactId>
+			<version>2.1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap-switch</artifactId>
+			<version>3.3.2</version>
+		</dependency>
+		<!-- END CORE PLUGINS -->
+
+		<!-- BEGIN PAGE LEVEL PLUGINS -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>momentjs</artifactId>
+			<version>2.14.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap-daterangepicker</artifactId>
+			<version>2.1.19</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>morrisjs</artifactId>
+			<version>0.5.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>raphaeljs</artifactId>
+			<version>2.1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars.bower</groupId>
+			<artifactId>waypoints</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars.bower</groupId>
+			<artifactId>counterup</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>amcharts</artifactId>
+			<version>3.15.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>fullcalendar</artifactId>
+			<version>2.8.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.webjars.npm</groupId>
+			<artifactId>jquery-sidebar</artifactId>
+			<version>3.3.2</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.webjars.bower</groupId>
 			<artifactId>html5-boilerplate</artifactId>
@@ -152,11 +278,7 @@
 			<artifactId>jsencrypt</artifactId>
 			<version>2.3.0</version>
 		</dependency>
-		<dependency>
-			<groupId>org.webjars</groupId>
-			<artifactId>jquery</artifactId>
-			<version>1.12.4</version>
-		</dependency>
+
 		<dependency>
 			<groupId>org.webjars.bower</groupId>
 			<artifactId>jquery-validation</artifactId>
@@ -173,11 +295,7 @@
 			<artifactId>angularjs</artifactId>
 			<version>1.5.7</version>
 		</dependency>
-		<dependency>
-			<groupId>org.webjars</groupId>
-			<artifactId>bootstrap</artifactId>
-			<version>3.3.7-1</version>
-		</dependency>
+
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>font-awesome</artifactId>
@@ -203,21 +321,13 @@
 			<artifactId>iCheck</artifactId>
 			<version>1.0.2</version>
 		</dependency>
-		<dependency>
-			<groupId>org.webjars</groupId>
-			<artifactId>momentjs</artifactId>
-			<version>2.14.1</version>
-		</dependency>
+
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>moment-timezone</artifactId>
 			<version>0.5.5</version>
 		</dependency>
-		<dependency>
-			<groupId>org.webjars</groupId>
-			<artifactId>bootstrap-daterangepicker</artifactId>
-			<version>2.1.19</version>
-		</dependency>
+
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>datatables</artifactId>
@@ -233,7 +343,6 @@
 			<artifactId>masonry</artifactId>
 			<version>3.3.2</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.webjars.bower</groupId>
 			<artifactId>bootstrap-star-rating</artifactId>
@@ -249,7 +358,6 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-
 		<!-- <dependency> -->
 		<!-- <groupId>org.webjars.bower</groupId> -->
 		<!-- <artifactId>bootstrap-wysiwyg-steveathon</artifactId> -->
@@ -257,63 +365,21 @@
 		<!-- </dependency> -->
 
 
-
-
-		<dependency>
-			<groupId>org.webjars</groupId>
-			<artifactId>bootstrap-switch</artifactId>
-			<version>3.3.2</version>
-		</dependency>
-		<dependency>
-			<groupId>org.webjars</groupId>
-			<artifactId>fullcalendar</artifactId>
-			<version>2.8.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.webjars.bower</groupId>
-			<artifactId>js-cookie</artifactId>
-			<version>2.1.2</version>
-		</dependency>
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>jQuery-slimScroll</artifactId>
 			<version>1.3.8</version>
 		</dependency>
-		<dependency>
-			<groupId>org.webjars</groupId>
-			<artifactId>jquery-blockui</artifactId>
-			<version>2.65</version>
-		</dependency>
-		<dependency>
-			<groupId>org.webjars</groupId>
-			<artifactId>morrisjs</artifactId>
-			<version>0.5.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.webjars</groupId>
-			<artifactId>raphaeljs</artifactId>
-			<version>2.1.4</version>
-		</dependency>
-		<dependency>
-			<groupId>org.webjars.bower</groupId>
-			<artifactId>waypoints</artifactId>
-			<version>4.0.0</version>
-		</dependency>
+
+
+
 		<dependency>
 			<groupId>org.webjars.bower</groupId>
 			<artifactId>countUp.js</artifactId>
 			<version>1.7.0</version>
 		</dependency>
-		<dependency>
-			<groupId>org.webjars.bower</groupId>
-			<artifactId>counterup</artifactId>
-			<version>1.0.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.webjars</groupId>
-			<artifactId>amcharts</artifactId>
-			<version>3.15.0</version>
-		</dependency>
+
+
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>flot</artifactId>
@@ -334,8 +400,6 @@
 			<artifactId>requirejs</artifactId>
 			<version>2.2.0</version>
 		</dependency>
-
-
 		<dependency>
 			<groupId>org.webjars.bower</groupId>
 			<artifactId>datatables-buttons</artifactId>
@@ -351,11 +415,32 @@
 			<artifactId>datatables-responsive</artifactId>
 			<version>2.1.0</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>bootstrap-datepicker</artifactId>
 			<version>1.6.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap-treeview</artifactId>
+			<version>1.2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars.bower</groupId>
+			<artifactId>toastr</artifactId>
+			<version>2.1.3</version>
+		</dependency>
+
+		<!-- MyBatis -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.4.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>1.3.0</version>
 		</dependency>
 
 		<!-- Spring Framework -->
@@ -444,6 +529,52 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-annotations</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.woodstox</groupId>
+			<artifactId>woodstox-core-asl</artifactId>
+		</dependency>
+
+		<!-- Commons FileUpload -->
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+		</dependency>
+		<!-- Commons IO -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+		</dependency>
+		<!-- Commons Lang -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>
+
+		<!-- Bean Validation (JSR-303) -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+		</dependency>
+
+		<!-- Quartz -->
+		<dependency>
+			<groupId>org.quartz-scheduler</groupId>
+			<artifactId>quartz</artifactId>
+		</dependency>
+
+		<!-- Apache POI -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
 		</dependency>
 
 	</dependencies>
