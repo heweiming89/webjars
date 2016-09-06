@@ -4,8 +4,11 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
+import cn.heweiming.webjars.bean.OrderStatusSerializer;
+
+@JsonSerialize(using = OrderStatusSerializer.class)
 public enum OrderStatus {
 
     NEW("00", "新建"),
@@ -52,7 +55,7 @@ public enum OrderStatus {
     /**
      * @return the code
      */
-    @JsonValue
+    // @JsonValue
     public String getCode() {
         return code;
     }
@@ -60,6 +63,7 @@ public enum OrderStatus {
     /**
      * @return the description
      */
+    // @JsonValue
     public String getDescription() {
         return description;
     }

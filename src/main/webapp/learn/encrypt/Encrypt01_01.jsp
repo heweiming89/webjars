@@ -19,7 +19,7 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
     <meta name="description" content="">
-    <script src="${ctx_path}/webjars/jquery/1.12.4/jquery.min.js"></script>
+    <script src="${ctx_path}/webjars/jquery/2.2.4/jquery.min.js"></script>
     <script src="${ctx_path}/webjars/jsencrypt/2.3.0/bin/jsencrypt.min.js"></script>
 </head>
 <body>
@@ -29,37 +29,48 @@
 
 <!-- Add your site or application content here -->
 <p>Hello world! This is HTML5 Boilerplate.</p>
-<form id="encrypt_form"  action="${ctx_path}/cncrypt">
-    <input type="text" name="username" id="username">
-    <br/>
-    <input type="password" name="password" id="password">
-    <br/>
-    <button type="submit">提交表单</button>
-</form>
+<%--<form id="encrypt_form"  action="${ctx_path}/cncrypt">--%>
+<%--<input type="text" name="username" id="username">--%>
+<%--<br/>--%>
+<%--<input type="password" name="password" id="password">--%>
+<%--<br/>--%>
+<%--<button type="submit">提交表单</button>--%>
+<%--</form>--%>
+<input type="text" name="username" id="plaintext">
+<br/>
+<button type="button" id="btn">加密</button>
+<br />
+<textarea id="ciphertext" rows="10" cols="160"></textarea>
 
 
+</body>
 <script>
-    function encryptText(plaintext){
+    function encryptText(plaintext) {
         var public_key = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCtdFAsGlWX9b3tgQ0nC3Z0047cU3j7jFhMkSE2YP2h59BRcrqcZ9EyP3K3ecAcI7yNRu6SSjxwt9KbBmVrQ+6Dl5ew/t/MhrEsbrmGh5hAuJBAyb1u+/Lk/uG2pFP8LwBzrojR9TA4CK6e8kUPLwdVCTaTZ0rhQ++1MsEkJbG6twIDAQAB";
         var encrypt = new JSEncrypt();
         encrypt.setPublicKey(public_key);
         return encrypt.encrypt(plaintext);
     }
 
+    $(document).on("click", "#btn", function () {
+        var plaintext = $("#plaintext").val();
+        var ciphertext = encryptText(plaintext);
+        $("#ciphertext").val(ciphertext);
 
 
-    $(function(){
-        $('#encrypt_form').on("submit",function(){
-            $(this).find('input[type="password"]').each(function(index,domEle){
-              if($(domEle).val()){
-                  $(domEle).val(encryptText($(domEle).val()));
-              }
-            });
-        });
     });
 
 
+    //    $(function(){
+    //        $('#encrypt_form').on("submit",function(){
+    //            $(this).find('input[type="password"]').each(function(index,domEle){
+    //              if($(domEle).val()){
+    //                  $(domEle).val(encryptText($(domEle).val()));
+    //              }
+    //            });
+    //        });
+    //    });
+
 
 </script>
-</body>
 </html>

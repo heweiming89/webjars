@@ -1,5 +1,6 @@
 package cn.heweiming.webjars.test;
 
+import org.apache.commons.codec.binary.Base64;
 import org.springframework.http.MediaType;
 import org.springframework.util.MimeType;
 import org.testng.annotations.Test;

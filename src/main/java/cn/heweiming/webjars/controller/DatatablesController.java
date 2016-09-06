@@ -4,11 +4,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import javax.servlet.http.HttpServlet;
-
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import cn.heweiming.webjars.bean.Person;
 import cn.heweiming.webjars.dto.DataTablesReqDto;
@@ -17,11 +15,9 @@ import cn.heweiming.webjars.dto.DataTablesRespDto;
 /**
  * Servlet implementation class DatatablesServlet
  */
-@Controller
+@RestController
 @RequestMapping("/datatables")
-public class DatatablesController extends HttpServlet {
-
-    private static final long serialVersionUID = 1L;
+public class DatatablesController {
 
     private static List<String[]> data;
 
@@ -41,13 +37,13 @@ public class DatatablesController extends HttpServlet {
         }
     }
 
-    @RequestMapping(value = "/ajax/array")
+    @RequestMapping(value = "/server/array")
     @ResponseBody
-    public DataTablesRespDto ajaxArray(DataTablesReqDto reqDto, int draw, int start,
-            int length) {
-        System.out.println("DatatablesController.ajaxData()");
+    public DataTablesRespDto serverArray(DataTablesReqDto reqDto) {
         DataTablesRespDto dto = new DataTablesRespDto();
         int total = data.size();
+        int start = reqDto.getStart();
+        int length = reqDto.getLength();
         dto.setDraw(reqDto.getDraw());
         dto.setRecordsTotal(total);
         dto.setRecordsFiltered(total);
@@ -56,19 +52,49 @@ public class DatatablesController extends HttpServlet {
         return dto;
     }
 
-    @RequestMapping(value = "/ajax/object")
+    @RequestMapping(value = "/server/object")
     @ResponseBody
-    public DataTablesRespDto ajaxObject(DataTablesReqDto reqDto) {
+    public DataTablesRespDto serverObject(DataTablesReqDto reqDto) {
         DataTablesRespDto respDto = new DataTablesRespDto();
         respDto.setDraw(reqDto.getDraw());
         respDto.setRecordsTotal(reqDto.getLength() * 13);
         respDto.setRecordsFiltered(reqDto.getLength() * 13);
-//        respDto.setError(String.format("error 测试 %1$tF %1$tT", new Date()));
+        // respDto.setError(String.format("error 测试 %1$tF %1$tT", new Date()));
         List<Person> data = new ArrayList<>();
         for (int i = reqDto.getStart() + 1;; i++) {
             if (i - reqDto.getStart() >= 10) {
                 break;
             }
+            Person person = new Person();
+            person.setAge(i);
+            person.setBirthday(new Date());
+            person.setGender("性别" + i);
+            person.setName("姓名" + i);
+            person.setNation("民族" + i);
+            person.setWeight(i);
+            person.setMobilePhone("手机号码" + i);
+            data.add(person);
+        }
+        respDto.setData(data);
+        return respDto;
+    }
+
+    @RequestMapping(value = "/client/array")
+    public DataTablesRespDto clientArray(DataTablesReqDto reqDto) {
+        DataTablesRespDto dto = new DataTablesRespDto();
+        int total = data.size();
+        dto.setDraw(reqDto.getDraw());
+        dto.setRecordsTotal(total);
+        dto.setRecordsFiltered(total);
+        dto.setData(data);
+        return dto;
+    }
+
+    @RequestMapping(value = "/client/object")
+    public DataTablesRespDto clientObject(DataTablesReqDto reqDto) {
+        DataTablesRespDto respDto = new DataTablesRespDto();
+        List<Person> data = new ArrayList<>();
+        for (int i = 1; i <= 127; i++) {
             Person person = new Person();
             person.setAge(i);
             person.setBirthday(new Date());

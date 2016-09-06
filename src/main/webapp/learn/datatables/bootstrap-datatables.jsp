@@ -41,7 +41,7 @@
 
 
 
-<script src="${ctx_path}/webjars/jquery/1.12.4/jquery.min.js"></script>
+<script src="${ctx_path}/webjars/jquery/2.2.4/jquery.min.js"></script>
 <script src="${ctx_path}/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
 <script src="${ctx_path}/webjars/datatables/1.10.12/js/dataTables.bootstrap.min.js"></script>
 
