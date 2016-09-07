@@ -24,7 +24,7 @@ public class BubbleSortDemo01 {
     public void test02() {
         int outside = 0;
         int inside = 0;
-        int[] array = { -5, 2, 5, 10, 7, 16, -9 };
+        int[] array = { -5, 2, 5, -9, 16, 10, 7 };
         for (int i = 0, len = array.length; i < len - 1; i++) {
             outside++;
             for (int j = 0; j < len - i - 1; j++) {

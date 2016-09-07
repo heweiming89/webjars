@@ -10,8 +10,8 @@ public class SelectionSortDemo01 {
     public void test01() {
         int inside = 0;
         int outside = 0;
-        int[] array = { -5, 2, 5, -9, 10, 7, 16 };
-        for (int i = 0, size = array.length - 1; i < size; i++) {
+        int[] array = { -5, 2, 5, -9, 16, 10, 7 };
+        for (int i = 0, size = array.length; i < size - 1; i++) {
             outside++;
             for (int j = i + 1; j < size; j++) {
                 inside++;

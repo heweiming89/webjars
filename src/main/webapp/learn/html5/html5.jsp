@@ -36,17 +36,12 @@
 <![endif]-->
 
 <!-- Add your site or application content here -->
-<nav>
-    <a href="index.asp">Home</a>
-    <a href="html5_meter.asp">Previous</a>
-    <a href="html5_noscript.asp">Next</a>
-</nav>
 
 
+
+</body>
 <script src="${ctx_path}/webjars/jquery/2.2.4/jquery.min.js"></script>
-
 <script>
 
 </script>
-</body>
 </html>
