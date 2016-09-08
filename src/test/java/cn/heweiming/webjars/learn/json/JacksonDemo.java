@@ -16,7 +16,6 @@ public class JacksonDemo {
         dataMap.put("name", "曾阿牛");
         dataMap.put("age", 22);
         dataMap.put("status",OrderStatus.NEW);
-        
         try {
             String json1 = objectMapper.writeValueAsString(OrderStatus.NEW);
             String json2 = objectMapper.writeValueAsString(dataMap);

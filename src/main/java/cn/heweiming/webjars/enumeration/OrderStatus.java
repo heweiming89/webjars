@@ -6,9 +6,9 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-import cn.heweiming.webjars.bean.OrderStatusSerializer;
+import cn.heweiming.webjars.bean.EnumerationSerializer;
 
-@JsonSerialize(using = OrderStatusSerializer.class)
+@JsonSerialize(using = EnumerationSerializer.class)
 public enum OrderStatus {
 
     NEW("00", "新建"),
