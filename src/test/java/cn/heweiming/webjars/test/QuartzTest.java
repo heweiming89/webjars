@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.junit.Test;
 import org.quartz.DateBuilder;
 import org.quartz.JobBuilder;
 import org.quartz.JobDataMap;
@@ -20,7 +21,6 @@ import org.quartz.Trigger;
 import org.quartz.TriggerBuilder;
 import org.quartz.impl.StdSchedulerFactory;
 import org.quartz.impl.calendar.HolidayCalendar;
-import org.testng.annotations.Test;
 
 import cn.heweiming.webjars.test.quartz.job.MyJob1;
 

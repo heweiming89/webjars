@@ -19,7 +19,12 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
     <meta name="description" content="">
-    <script src="${ctx_path}/webjars/jquery/2.2.4/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <link href="${ctx_path}/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="${ctx_path}/webjars/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <%--<link rel="stylesheet" href="${ctx_path}/webjars/select2-bootstrap-css/1.4.6/select2-bootstrap.min.css">--%>
+    <link rel="stylesheet" href="${ctx_path}/webjars/select2/4.0.3/dist/css/select2.min.css">
 </head>
 <body>
 <!--[if lt IE 8]>
@@ -27,11 +32,15 @@
 <![endif]-->
 
 <!-- Add your site or application content here -->
-
+<select class="js-example-basic-single js-states form-control" id="id_label_single"></select>
 
 
 
 </body>
+<script src="${ctx_path}/webjars/jquery/2.2.4/jquery.min.js"></script>
+<script src="${ctx_path}/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+<script src="${ctx_path}/webjars/select2/4.0.3/dist/js/i18n/zh-CN.js"></script>
+<script src="${ctx_path}/webjars/select2/4.0.3/dist/js/select2.min.js"></script>
 <script>
 
 </script>

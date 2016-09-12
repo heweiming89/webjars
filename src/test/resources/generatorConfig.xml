@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+	<properties resource="mbg.properties" />
+
+	<classPathEntry location="D:/openSource/lib/JDBC/MySQL/mysql-connector-java-5.1.39.jar" />
+
+	<context id="MyBatis3" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+			<property name="suppressDate" value="true" />
+		</commentGenerator>
+
+		<jdbcConnection driverClass="${jdbc.driver}" connectionURL="${jdbc.url}" userId="${jdbc.username}"
+			password="" />
+
+		<javaModelGenerator targetPackage="${modelPackage}" targetProject="${projectName}" />
+
+		<sqlMapGenerator targetPackage="${mapperXmlPackage}" targetProject="${projectName}" />
+
+		<javaClientGenerator targetPackage="${mapperPackage}" targetProject="${projectName}"
+			type="XMLMAPPER" />
+
+		<table tableName="mybatis_users" domainObjectName="User">
+			<generatedKey column="id" sqlStatement="Mysql"/>
+			<columnOverride column="gender" javaType="cn.heweiming.webjars.enumeration.Gender"></columnOverride>
+		
+		</table>
+
+	</context>
+</generatorConfiguration>

@@ -6,7 +6,7 @@ import java.security.spec.InvalidKeySpecException;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 
-import org.testng.annotations.Test;
+import org.junit.Test;
 
 import cn.heweiming.webjars.utils.RSAEncryptUtils;
 

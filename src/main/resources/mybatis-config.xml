@@ -4,6 +4,16 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
+	<typeHandlers>
+		<!-- 按枚举名字 -->
+		<!-- <typeHandler handler="org.apache.ibatis.type.EnumTypeHandler" javaType="cn.heweiming.webjars.enumeration.Gender" 
+			/> -->
+		<!-- 按枚举序数 -->
+		<!-- <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" javaType="cn.heweiming.webjars.enumeration.Gender" 
+			/> -->
+		<typeHandler handler="cn.heweiming.webjars.typeHandler.EnumCodeTypeHandler" javaType="cn.heweiming.webjars.enumeration.Gender" />
+	</typeHandlers>
+
 	<mappers>
 
 	</mappers>

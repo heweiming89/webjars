@@ -2,7 +2,7 @@ package cn.heweiming.webjars.learn.algorithm;
 
 import java.util.Arrays;
 
-import org.testng.annotations.Test;
+import org.junit.Test;
 
 public class SelectionSortDemo01 {
 
