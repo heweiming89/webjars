@@ -12,7 +12,7 @@ import org.apache.shiro.subject.PrincipalCollection;
 import cn.heweiming.webjars.model.User;
 import cn.heweiming.webjars.services.UserService;
 
-public class ProjectRealm extends AuthorizingRealm {
+public class UserRealm extends AuthorizingRealm {
 
     private UserService userService;
 

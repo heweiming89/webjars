@@ -6,10 +6,10 @@
 		<property name="name" value="张三" />
 	</bean>
 
-	<bean id="projectRealm" class="cn.heweiming.webjars.realm.ProjectRealm" />
+	<bean id="userRealm" class="cn.heweiming.webjars.realm.UserRealm" />
 
 	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
-		<property name="realm" ref="projectRealm" />
+		<property name="realm" ref="userRealm" />
 
 	</bean>
 
