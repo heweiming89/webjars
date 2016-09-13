@@ -6,7 +6,7 @@ import java.util.Map;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import cn.heweiming.webjars.enumeration.OrderStatus;
+import cn.heweiming.webjars.enums.OrderStatus;
 
 @RestController
 @RequestMapping("/json")

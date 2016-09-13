@@ -94,10 +94,10 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 		</dependency>
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.slf4j</groupId> -->
-<!-- 			<artifactId>slf4j-simple</artifactId> -->
-<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.slf4j</groupId> -->
+		<!-- <artifactId>slf4j-simple</artifactId> -->
+		<!-- </dependency> -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>jcl-over-slf4j</artifactId>
@@ -492,14 +492,19 @@
 		</dependency>
 		<dependency>
 			<groupId>org.apache.shiro</groupId>
-			<artifactId>shiro-ehcache</artifactId>
+			<artifactId>shiro-spring</artifactId>
 			<version>${shiro.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.shiro</groupId>
-			<artifactId>shiro-spring</artifactId>
+			<artifactId>shiro-ehcache</artifactId>
 			<version>${shiro.version}</version>
 		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.apache.shiro</groupId> -->
+<!-- 			<artifactId>shiro-quartz</artifactId> -->
+<!-- 			<version>${shiro.version}</version> -->
+<!-- 		</dependency> -->
 
 		<!-- Spring Framework -->
 		<dependency>

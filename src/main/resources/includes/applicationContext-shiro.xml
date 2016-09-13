@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+
+	<bean id="person" class="cn.heweiming.webjars.bean.Person">
+		<property name="name" value="张三" />
+	</bean>
+
+	<bean id="projectRealm" class="cn.heweiming.webjars.realm.ProjectRealm" />
+
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+		<property name="realm" ref="projectRealm" />
+
+	</bean>
+
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+		<property name="securityManager" ref="securityManager" />
+		<property name="loginUrl" value="/login" />
+		<property name="successUrl" value="/index" />
+		<property name="unauthorizedUrl" value="/unauth" />
+		<property name="filterChainDefinitions">
+			<value>
+
+			</value>
+		</property>
+	</bean>
+
+	<bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<property name="staticMethod" value="org.apache.shiro.SecurityUtils.setSecurityManager" />
+		<property name="arguments" ref="securityManager" />
+
+	</bean>
+
+	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor" />
+
+	<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
+		depends-on="lifecycleBeanPostProcessor" />
+
+	<bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+		<property name="securityManager" ref="securityManager" />
+	</bean>
+
+
+
+</beans>

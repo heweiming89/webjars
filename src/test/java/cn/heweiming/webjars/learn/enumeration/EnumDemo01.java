@@ -2,7 +2,7 @@ package cn.heweiming.webjars.learn.enumeration;
 
 import org.junit.Test;
 
-import cn.heweiming.webjars.enumeration.Gender;
+import cn.heweiming.webjars.enums.Gender;
 
 public class EnumDemo01 {
 

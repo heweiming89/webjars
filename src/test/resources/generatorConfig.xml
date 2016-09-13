@@ -23,11 +23,16 @@
 		<javaClientGenerator targetPackage="${mapperPackage}" targetProject="${projectName}"
 			type="XMLMAPPER" />
 
-		<table tableName="mybatis_users" domainObjectName="User">
-			<generatedKey column="id" sqlStatement="Mysql"/>
-			<columnOverride column="gender" javaType="cn.heweiming.webjars.enumeration.Gender"></columnOverride>
-		
+		<table tableName="mybatis_users" domainObjectName="Consumer">
+			<generatedKey column="id" sqlStatement="Mysql" />
+			<columnOverride column="gender" javaType="cn.heweiming.webjars.enums.Gender"></columnOverride>
 		</table>
+
+<!-- 		<table tableName="sys_permissions" domainObjectName="Permission"></table> -->
+<!-- 		<table tableName="sys_roles" domainObjectName="Role"></table> -->
+<!-- 		<table tableName="sys_users" domainObjectName="User"></table> -->
+<!-- 		<table tableName="sys_roles_permissions" domainObjectName="RolePermission"></table> -->
+<!-- 		<table tableName="sys_users_roles" domainObjectName="UserRole"></table> -->
 
 	</context>
 </generatorConfiguration>

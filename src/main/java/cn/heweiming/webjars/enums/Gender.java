@@ -1,8 +1,13 @@
-package cn.heweiming.webjars.enumeration;
+package cn.heweiming.webjars.enums;
+
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+import cn.heweiming.webjars.bean.EnumerationSerializer;
 
 /**
  * @author heweiming 2016年9月12日 上午11:37:39
  */
+@JsonSerialize(using = EnumerationSerializer.class)
 public enum Gender implements BaseEnum<Gender> {
 
     /** 男 */

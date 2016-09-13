@@ -1,4 +1,4 @@
-package cn.heweiming.webjars.enumeration;
+package cn.heweiming.webjars.enums;
 
 public interface BaseEnum<T> {
     

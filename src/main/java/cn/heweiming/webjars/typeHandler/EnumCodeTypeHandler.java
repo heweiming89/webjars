@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
 
-import cn.heweiming.webjars.enumeration.BaseEnum;
+import cn.heweiming.webjars.enums.BaseEnum;
 
 public class EnumCodeTypeHandler<E extends Enum<E> & BaseEnum<E>>
         extends BaseTypeHandler<E> {

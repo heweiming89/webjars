@@ -1,4 +1,4 @@
-package cn.heweiming.webjars.enumeration;
+package cn.heweiming.webjars.enums;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;

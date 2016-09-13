@@ -11,7 +11,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<!-- 按枚举序数 -->
 		<!-- <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" javaType="cn.heweiming.webjars.enumeration.Gender" 
 			/> -->
-		<typeHandler handler="cn.heweiming.webjars.typeHandler.EnumCodeTypeHandler" javaType="cn.heweiming.webjars.enumeration.Gender" />
+		<typeHandler handler="cn.heweiming.webjars.typeHandler.EnumCodeTypeHandler" javaType="cn.heweiming.webjars.enums.Gender" />
 	</typeHandlers>
 
 	<mappers>
