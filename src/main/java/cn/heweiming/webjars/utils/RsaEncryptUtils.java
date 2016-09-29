@@ -14,7 +14,7 @@ import java.util.Properties;
 
 import javax.crypto.Cipher;
 
-public class RSAEncryptUtils {
+public class RsaEncryptUtils {
 
     private static final String RSA_TOOL_PROPERTIES = "RSAEncrypt.properties";
     private static final String RSA = "RSA";
@@ -26,7 +26,7 @@ public class RSAEncryptUtils {
     static {
         try {
             Properties p = new Properties();
-            p.load(RSAEncryptUtils.class.getResourceAsStream(RSA_TOOL_PROPERTIES));
+            p.load(RsaEncryptUtils.class.getResourceAsStream(RSA_TOOL_PROPERTIES));
             PRIVATE_BASE_64 = p.getProperty("PRIVATE_BASE_64");
             PUBLIC_BASE_64 = p.getProperty("PUBLIC_BASE_64");
         } catch (IOException e) {

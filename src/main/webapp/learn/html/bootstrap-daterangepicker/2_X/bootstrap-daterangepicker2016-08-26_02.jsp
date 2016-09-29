@@ -55,9 +55,9 @@
 <div class="row" style="margin-top: 20px;margin-left: 20px;">
     <div class="col-md-4" style="padding: 0px;">
         <div class="form-group">
-            <div class="input-group" style="width: 240px;">
-                <label style="padding-top: 5px;margin-right: 2px;">时间范围：</label>
-                <div id="reportrange" class="form-control">
+            <div class="input-group">
+                <label class="pull-left" style="padding-top: 5px;margin-right: 2px;">时间范围：</label>
+                <div id="reportrange" class="form-control" style="width: 240px;">
                     <i class="fa fa-calendar"></i>&nbsp;
                     <span></span>
                 </div>

@@ -5,18 +5,10 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Insert title here</title>
-
+	<link rel="shortcut icon" href="favicon.ico">
 
     <c:set var="ctx_path" value="${pageContext.request.contextPath }"/>
 </head>
-<body>
-<form action="${ctx_path }/cncrypt" method="post">
-    密码:<input id="password_input" type="password" onchange="encryptText(this,'#password')"/>
-    <input type="hidden" id="password" name="password" />
-    <br/>
-    <button type="submit">提交</button>
-</form>
-</body>
 <script type="text/javascript" src="${ctx_path}/webjars/jquery/2.2.4/jquery.min.js"></script>
 <script type="text/javascript" src="${ctx_path}/webjars/jsencrypt/2.3.0/bin/jsencrypt.min.js"></script>
 <script type="text/javascript">
@@ -27,12 +19,18 @@
         var encrypt = new JSEncrypt();
         encrypt.setPublicKey(publicKey);
         var ciphertext = encrypt.encrypt(plaintext);
-        e
         $(targetElement).val(ciphertext);
     }
 
-
-
 </script>
+<body>
+<form action="${ctx_path }/cncrypt" method="post">
+    密码:<input id="password_input" type="password" onchange="encryptText(this,'#password')"/>
+    <input type="hidden" id="password" name="password" />
+    <br/>
+    <button type="submit">提交</button>
+</form>
+</body>
+
 
 </html>

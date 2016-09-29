@@ -22,11 +22,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="webjars" />
+        <module name="webProject" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="webjars" target="1.7" />
+      <module name="webProject" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

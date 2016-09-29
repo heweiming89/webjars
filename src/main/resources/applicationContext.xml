@@ -58,6 +58,6 @@
     <!-- <aop:advisor advice-ref="transactionAdive" pointcut-ref="transactionPointcut" /> -->
     <!-- </aop:config> -->
 
-	<import resource="includes/applicationContext-shiro.xml"/>
+<!-- 	<import resource="includes/applicationContext-shiro.xml"/> -->
 
 </beans>
